@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SMS.Areas.Attendance.Models.CurrentAttendance>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Attendance/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendanceUser.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttendanceUser.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CurrentAttendanceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CurrentAttendanceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CurrentAttendanceId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model SMS.Areas.Attendance.Models.AttendanceUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Attendance/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AttendanceUser</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FingerPrint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FingerPrint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminMobileNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminMobileNo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AttendanceUserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
